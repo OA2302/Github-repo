@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+    background-size: 200% 100%;
+    animation: waveAnimation 5s infinite alternate; /* Adjust the duration as needed */
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+
+.profile {
+    display: flex;
+    gap: 15%;
+    padding-left: 50px;
+    padding-top: 30px;
+    & .img {
+        overflow: visible;
+        & img {
+            width: 150px;
+            border-radius: 50%;
+        }
+        & p {
+            display: flex;
+            gap: 15px;
+            overflow: visible;
+            padding-top: 15px;
+            width: 280px;
+        }
+    }
+    & .name {
+        display: grid;
+        gap: 2px;
+        & h2 {
+            font-family: sans-serif;
+            font-size: xx-large;
+            letter-spacing: 2px;
+            font-weight: 200;
+        }
+        & .bio {
+            width: 500px;
+            font-family: sans-serif;
+            letter-spacing: 0.9px;
+            font-weight: 500;
+        }
+        & p {
+            font-family: sans-serif;
+            letter-spacing: 0.9px;
+            font-weight: 500;
+        }
+    }
+}
+
+.repo {
+    padding-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    gap: 15px;
+    margin-top: 40px;
+    & .repo-card {
+        display: grid;
+        gap: 10px;
+        padding: 15px;
+        width: 85%;
+        border: 1.4px solid black;
+        & h2 {
+            font-family: sans-serif;
+            font-size: x-large;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+        & p {
+            width: 90%;
+            font-family: sans-serif;
+            letter-spacing: 0.9px;
+            font-weight: 500;
+        }
+        & .btn {
+            display: flex;
+            gap: 5px;
+            & button {
+                width: 120px;
+                height: 35px;
+                border: none;
+                background-color: rgb(0, 102, 255);
+                color: #eaeaea;
+                border-radius: 3px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+#pagination {
+    display: flex;
+    gap: 0;
+    margin-top: 20px;
+    margin-left: 30%;
+    margin-bottom: 40px;
+    width: 40%;
+    & button {
+        width: 15%;
+        height: 30px;
+        background-color: #ffffff;
+        color: rgb(0, 102, 255);
+        border: 1.2px solid rgb(155, 191, 245);
+        font-weight: 700;
+    }
+}
+#pagination button.active {
+    background-color: rgb(0, 102, 255);
+    color: #ffffff;
+    border: 1.2px solid rgb(155, 191, 245);
+  }
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .profile {
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .profile .img {
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        & p {
+            text-align: center;
+            
+        }
+    }
+
+    .name {
+        padding-top: 20px;
+    }
+
+    .repo {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .repo .repo-card {
+        width: 100%;
+    }
+
+    #pagination {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .profile {
+        display: flex;
+        flex-direction: column; /* Change to column for mobile layout */
+        align-items: center; /* Center content */
+        padding: 30px;
+    }
+    
+    .profile .img {
+        margin-bottom: 20px;
+    }
+    
+    .profile .img img {
+        width: 150px;
+        border-radius: 50%;
+    }
+    
+    .profile .img p {
+        display: flex;
+        gap: 15px;
+        overflow: visible;
+        padding-top: 15px;
+        width: 280px;
+    }
+    
+    .profile .name {
+        display: grid;
+        gap: 2px;
+        text-align: center; /* Center text */
+    }
+    
+    .profile .name h2 {
+        font-family: sans-serif;
+        font-size: xx-large;
+        letter-spacing: 2px;
+        font-weight: 200;
+    }
+    
+    .profile .name .bio {
+        width: 100%; /* Full width on mobile */
+        max-width: 500px;
+        font-family: sans-serif;
+        letter-spacing: 0.9px;
+        font-weight: 500;
+        text-align: center; /* Center text */
+    }
+    
+    .profile .name p {
+        font-family: sans-serif;
+        letter-spacing: 0.9px;
+        font-weight: 500;
+        text-align: center; /* Center text */
+    }
+    
+    .repo {
+        padding: 20px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: none;
+    }
+    
+    .repo .repo-card {
+        display: grid;
+        gap: 10px;
+        padding: 15px;
+        width: 100%; /* Full width on mobile */
+        border: 1.4px solid black;
+    }
+    
+    .repo .repo-card h2 {
+        font-family: sans-serif;
+        font-size: x-large;
+        letter-spacing: 2px;
+        font-weight: 300;
+    }
+    
+    .repo .repo-card p {
+        width: 100%; /* Full width on mobile */
+        font-family: sans-serif;
+        letter-spacing: 0.9px;
+        font-weight: 500;
+    }
+    
+    .repo .repo-card .btn {
+        display: flex;
+        gap: 5px;
+    }
+    
+    .repo .repo-card button {
+        width: 100%; /* Full width on mobile */
+        height: 35px;
+        border: none;
+        background-color: rgb(0, 102, 255);
+        color: #eaeaea;
+        border-radius: 3px;
+        font-weight: 600;
+    }
+    
+    
+    
+    #pagination button.active {
+        background-color: rgb(0, 102, 255);
+        color: #ffffff;
+        border: 1.2px solid rgb(155, 191, 245);
+    }
+}
